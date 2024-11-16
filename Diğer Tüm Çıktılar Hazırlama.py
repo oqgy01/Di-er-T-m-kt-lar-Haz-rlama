@@ -4159,7 +4159,7 @@ if faturasiz_siparisler == "E":
 
 
 
-
+user_input = "E"
 
 
 google_sheet_url = "https://docs.google.com/spreadsheets/d/1FJwRFD6ikSsy3uGFRiKp94Iaj1Jd5xerEzJfxJgS1f8/gviz/tq?tqx=out:csv"
