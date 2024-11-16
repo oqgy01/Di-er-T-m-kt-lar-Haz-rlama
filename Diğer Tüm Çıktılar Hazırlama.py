@@ -4155,6 +4155,84 @@ if faturasiz_siparisler == "E":
 
 
 
+
+
+
+
+
+
+
+google_sheet_url = "https://docs.google.com/spreadsheets/d/1FJwRFD6ikSsy3uGFRiKp94Iaj1Jd5xerEzJfxJgS1f8/gviz/tq?tqx=out:csv"
+
+try:
+    google_df = pd.read_csv(google_sheet_url)
+    google_excel_file = "Hariç Tutulacak Sipariş Numaraları.xlsx"
+    google_df.to_excel(google_excel_file, index=False)
+except requests.exceptions.RequestException as e:
+    pass
+
+
+def main():
+    while True:      
+        if user_input == "E":
+            # İki Excel dosyasını okuyun
+            birlesik_excel = pd.read_excel("birlesik_excel.xlsx")
+            haric_excel = pd.read_excel("Hariç Tutulacak Sipariş Numaraları.xlsx")
+
+            # İlk sütunlara göre birleşik Excel verisinden, haric Excel verisinde bulunan satırları filtreleyin
+            birlesik_excel = birlesik_excel[~birlesik_excel['Id'].isin(haric_excel['Id'])]
+
+            # Sonucu mevcut "birlesik_excel.xlsx" dosyasına kaydedin (var olan dosyanın üstüne yazacak)
+            birlesik_excel.to_excel("birlesik_excel.xlsx", index=False)
+            break
+        elif user_input == "H":
+            break
+        else:
+            print("Geçerli bir seçenek giriniz (E/H).")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+file_path = "Hariç Tutulacak Sipariş Numaraları.xlsx"
+
+
+
+if os.path.exists(file_path):
+    os.remove(file_path)
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
     google_sheet_url = "https://docs.google.com/spreadsheets/d/1PgldjEkmmjLPrG9dqvaou481m9QajCOlGxa7wCjwTAQ/gviz/tq?tqx=out:csv"
 
     try:
