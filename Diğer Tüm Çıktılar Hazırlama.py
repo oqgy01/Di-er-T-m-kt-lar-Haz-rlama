@@ -194,7 +194,7 @@ if bin_tl_uzeri_siparisler == "E":
 
 
 
-    google_sheet_url = "https://docs.google.com/spreadsheets/d/1zpRV6J8ztpTIKVM0-0wTgfhxZUOPs8Dq/gviz/tq?tqx=out:csv"
+    google_sheet_url = "https://docs.google.com/spreadsheets/d/1ftO6JPyREp1JbpO2ZIDgUe3YRt9zWLdk/gviz/tq?tqx=out:csv"
 
     try:
         google_df = pd.read_csv(google_sheet_url)
